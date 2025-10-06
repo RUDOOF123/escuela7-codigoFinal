@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: rgb(255, 226, 146);
+}
+.header h1, h2 {
+    font-size: 90%;
+}
+.COPY {
+    color: #27150b;
+    background-color: #c79c48;
+    padding: 10px 8px;
+    text-align: center;
+}
+.subtitulo {
+    font-family: "Protest Riot", sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0.5em 0;
+}
+.subtitulo2, .subtituloBajoMarco {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0.5em auto;
+    max-width: 90%;
+}
+.fortin-tapalquen {
+    position: absolute;
+    top: 79px;
+    left: 2%;
+}
+footer {
+    margin-top: auto;
+}
+.BLOQUE {
+    height: 460px;
+    width: 100%;
+}
+.cuerpo {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 226, 146);
+}
+.background-image-section {
+    background-image: url('imagenes/fondo.prueba.banner.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.solid-color-section {
+    background-color: rgb(253, 214, 107);
+    flex-grow: 1;
+    padding-bottom: 20px;
+}
+.contenedor-escudo-titulo {
+  display: flex;
+  align-items: center; 
+  padding: 20px; 
+  gap: 15px;   
+}
+.imagen-flotante-Biblioteca {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px double #6b4e1e;
+}
+.titulo-Biblioteca {
+  display: flex;
+  flex-direction: column;
+  font-family: serif;
+  color: rgb(129, 91, 42);
+}
+.titulo-Biblioteca h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+.titulo-Biblioteca h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: rgb(165, 101, 42);
+}
+.mover-menu {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+}
+.btn.dropdown-toggle {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: rgb(109, 109, 155);
+    font-size: 350%;
+}
+
+.Titulo-contenido {
+    text-align: center;
+}
+.MARCO {
+    min-height: 300px;
+    width: 90%;
+    max-width: 1000px;
+    background-color: #facb84;
+    margin: 5px auto;
+    border-radius: 35px;
+    border: 2px solid #6b4e1e;
+}
+.titulo-bajo-marco {
+    margin: 10px auto;
+    font-size: 70px;
+    text-align: center;
+}
+#contenedor-botones {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    width: fit-content;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(255, 226, 146);
+    border-radius: 15px;
+}
+#contenedor-botones button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #dfbc72;
+    border: 1px solid #face76;
+    width: 100%;
+}
+#contenedor-botones button:hover {
+    background-color: #ddb771;
+}
+@media (max-width: 600px) {
+    .imagen-flotante-Biblioteca{
+        width: 120px;
+        height: 120px;
+    }
+    .mover-menu {
+        left: 15px;
+        margin: 10px auto;
+        text-align: left;
+    }
+    .mover-menu .btn.dropdown-toggle{
+        font-size: 200%;
+        padding: 6px 12px;
+    }
+    .dropdown-menu {
+        font-size: 0.9rem;
+    }
+    body {
+        font-size: 20vw;
+    }
+    .subtitulo {
+        font-size: 180%;
+    }
+    .subtitulo2, .subtituloBajoMarco {
+        font-size: 16px;
+    }
+    .titulo-Biblioteca {
+        font-size: 2rem;
+        left: 10px;
+    }
+    .MARCO {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    #contenedor-botones {
+        grid-template-columns: repeat(2, 1fr);
+    } 
+    .btn.dropdown-toggle::after {
+        margin-left: -8px;
+
+    }
+    .mover-menu.dropdown_m-3.m-3{
+        margin: 0rem;
+    }
+    
+}

@@ -1,0 +1,223 @@
+body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        font-family: Arial, sans-serif;
+        flex-direction: column;
+        color: white;
+        background-image: url(fondo.jpg);
+    }
+    .login-container {
+      background: white;
+      padding: 20px;
+      width: 300px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+
+
+.COPY{
+    color: white;
+    background-color: rgb(25, 22, 37);
+    padding: 8px 5px;
+}
+.titulo{
+    font-size: 70px;
+    margin-left: 350px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.titulo-Biblioteca{
+    position: absolute;
+    top: 68px;
+    left: -5%;
+    font-size: 70px;
+    margin-left: 350px;
+    display: flex;
+    flex-direction: column;
+}
+.subtitulo{
+    font-family: "Protest Riot", sans-serif;
+    font-size: larger;
+}
+.encontra-tu-libro{
+    font-weight: bold;
+}
+.fortin-tapalquen{
+    position: absolute;
+    top: 79px;
+    left: 2%;
+
+}
+.BLOQUE{
+    height: 460px;
+    width: 100%;
+}
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* Permite que los elementos bajen cuando no caben */
+    background-color: rgb(255, 226, 146);
+}
+.bannner{
+    display: block;
+}
+.background-image-section {
+    background-image: url('imagenes/fondo.prueba.banner.jpg'); /* Ruta a tu imagen */
+    background-size: cover; /* La imagen cubre todo el contenedor */
+    background-position: center top; /* Centra la imagen horizontalmente y la alinea arriba */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    min-height: 70vh; /* La imagen ocupará el 70% de la altura de la ventana (ajusta a tu gusto) */
+    /* Puedes usar height: 70vh; si quieres una altura fija, pero min-height es más flexible */
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+}
+.solid-color-section {
+    background-color: rgb(253, 214, 107); /* Tu color sólido deseado */
+    flex-grow: 1; /* Hace que esta sección ocupe el espacio restante */
+    padding-bottom: 20px; /* Un poco de padding para que el contenido no pegue al footer */
+}
+
+.imagen-flotante {
+    position: absolute;
+    top: 300px;
+    left: 40px;
+
+    width: 500px;
+    height: auto;
+    z-index: 1000;
+
+    max-width: 20%; 
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.imagen-flotante-Biblioteca {
+    position: absolute;
+    top: 68px;
+    left: 0px;
+
+    width: 500px;
+    height: auto;
+    z-index: 1000;
+
+    max-width: 15%; 
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    border-top-style: double;
+}
+.botones{
+    text-align: center;
+    border-radius: 80px;
+    text-align: center;
+}
+.mover-menu{
+    position: absolute;
+    top: 235px; 
+    left: 55px;
+}
+.btn.dropdown-toggle {
+    background-color: transparent !important; 
+    border-color: transparent !important; 
+    box-shadow: none !important; 
+    color:rgb(109, 109, 155);
+    font-size: 350%;
+}
+.header h1,h2{
+    font-size: 90% !important;
+    
+}
+.COPY{
+    color:#27150b;
+    background-color:#c79c48;
+    padding: 10px 8px;
+}
+.Titulo-contenido {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    justify-content: center;
+    padding-top: 270px;  
+    
+}
+.Titulo-contenido2 {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    justify-content: center;
+    padding-top: 20px; 
+
+    
+}
+.barra-busqueda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.barra-busqueda input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 30px;
+}
+.preview {
+      max-width: 100%;
+      height: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      object-fit: contain;
+    
+}
+
+
+
+
+
+
+
+

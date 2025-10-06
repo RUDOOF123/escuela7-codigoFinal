@@ -1,0 +1,400 @@
+/* Estilos generales y del body */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    background-color: #f3e3a4;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    
+}
+
+/* Header y banner */
+header {
+    width: 100%;
+    position: relative; /* Contiene al background-image-section */
+    min-height: 20rem; /* Mantenemos una altura mínima para el banner */
+    display: flex;
+    background-color: #f3e3a4;
+    padding: 0,5rem;
+    background: linear-gradient(#e7a349 20%,#f3e3a4);
+    
+}
+
+
+.background-imagesection {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 25rem; /* Mismo que el header */
+    width: 100%;
+    height: auto; /* Ajuste automático de la altura */
+    display: flex;
+    position: relative; /* Importante: Este es el contenedor de referencia para el logo y el texto */
+    overflow: relative; /* Asegura que nada se desborde de este contenedor */
+    
+    /* Usaremos Flexbox para centrar y distribuir el logo y el texto principal */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    padding: 1rem; /* Pequeño padding general para los bordes */
+    margin: 1rem;   
+    box-sizing: border-box;
+    text-align: center;
+}
+/* Logo */
+.logo {
+    position: relative; /* Ahora es relativo dentro del flexbox */
+    z-index: 1000; /* Asegura que el logo esté siempre al frente */
+    border-radius: 100%;
+    overflow: hidden;
+    border: 2.5px solid #ffffff; /* Pequeño borde para destacarlo */
+    flex-shrink: 0; /* Evita que el logo se encoja */
+    
+    /* Tamaños adaptables del logo */
+    width: clamp(8rem, 18vw, 12rem); /* Min 8rem, 18% del viewport, Max 12rem */
+    height: clamp(8rem, 18vw, 12rem);
+    margin-right: 1.5rem; /* Espacio a la derecha del logo */
+    margin-top: -10rem;
+    top:6vw;
+    
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:flex;
+}
+
+/* Contenedor para los textos del header (Título, Subtítulo, Slogan) */
+.header-text-container {
+    position: relative; /* Ahora es relativo dentro del flexbox */
+    z-index: 999; /* Asegura que el texto esté sobre la imagen y debajo del logo */
+    color: #164a88; /* Color del texto para asegurar visibilidad */
+    text-align: left; /* Alineado a la izquierda para el layout con el logo */
+    flex-grow: 1; /* Permite que este contenedor ocupe el espacio restante */
+    width: auto; /* El ancho lo manejará Flexbox */
+    max-width: 800px; /* Ancho máximo para el texto en pantallas grandes */
+    padding: 0.5rem; /* Pequeño padding interno */
+   
+    margin: 0;
+}
+
+/* Títulos y subtítulos (dentro de .header-text-container) */
+.titulo {
+    font-family: 'Times New Roman', Times, serif;
+    color: #164a88;
+    margin-bottom: 0.5rem; /* Espacio debajo del título principal */
+}
+
+.titulo h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Título principal adaptable */
+    margin: 0;
+}
+
+.titulo h4 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem); /* Subtítulo adaptable */
+    margin-top: 0;
+}
+
+.subtitulo {
+    color: #a65928;
+    text-align: left; /* Alineado a la izquierda */
+    margin-top: 0.5rem; /* Menos espacio superior */
+}
+
+.subtitulo p {
+    font-size: clamp(0.9rem, 2.5vw, 1.4rem); /* Texto de subtítulo adaptable */
+    margin: 0;
+    line-height: 1.4;
+}
+
+.slogan {
+    font-family: "Protest Riot", sans-serif;
+    color: #164a88;
+    text-align: center;
+}
+
+.slogan h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Título del slogan adaptable */
+    margin: 0;
+}
+
+.slogan h5 {
+    color: black;
+    font-size: clamp(1rem, 2.5vw, 1.6rem); /* Subtítulo del slogan adaptable */
+    margin: 0;
+}
+
+/* Sección de color sólido (solid-color-section) */
+.solid-color-section {
+    background-color: #f3e3a4;
+    padding: 2rem 0; /* Padding superior e inferior para espacio */
+    flex-grow: 1; /* Permite que esta sección ocupe el espacio restante */
+}
+
+/* Botones */
+.bottons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 1.5rem; /* Espacio entre los botones */
+    margin-top: 5rem; /* Separación del contenido superior */
+    padding: 0 1rem; /* Padding horizontal para evitar que se peguen a los bordes */
+}
+
+.btn-12 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem; /* Ajustado para mejor proporción */
+    cursor: pointer;
+    letter-spacing: 0.125rem;
+    position: relative;
+    overflow: hidden;
+    background-color: #326aada4;
+    border-radius: 2rem; /* Valor fijo para un buen redondeo */
+    color: white;
+    min-width: 10rem; /* Ancho mínimo para cada botón */
+    max-width: 25rem; /* Ancho máximo para cada botón */
+    flex-basis: calc(33% - 1.5rem); /* 3 botones por fila en pantallas grandes */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho */
+}
+
+.btn-12 h2 {
+    margin: 0;
+    font-size: clamp(1rem, 2.5vw, 1.6rem); /* Tamaño de fuente adaptable para los botones */
+    text-align: center;
+}
+
+.btn-12:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    background: #164a88;
+    left: 50%; /* Centrado inicial */
+    transform: translateX(-50%); /* Ajuste para centrar correctamente */
+    height: 0.4rem;
+    bottom: 0;
+    transition: all .3s;
+    opacity: 0.7;
+}
+
+.btn-12:hover:before {
+    width: 100%;
+    left: 0;
+    transform: translateX(0); /* Quita la transformación al expandirse */
+}
+
+/* Sección de contacto */
+.box-contacto {
+    color: #000000;
+    margin: 3rem auto 2rem auto; /* Centrado horizontal y margen superior/inferior */
+    width: 90%; /* Ajuste el ancho para que respete los márgenes del 5% */
+    max-width: 55rem; /* Ancho máximo en rem */
+}
+
+.box-contacto-titulo h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Título de contacto adaptable */
+    text-align: center; /* Centrar el título */
+}
+
+.box-contacto-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+    gap: 1rem; /* Espacio vertical entre ítems */
+}
+
+.box-item {
+    display: flex;
+    align-items: center;
+    background-color: #27150b4d;
+    padding: 0.8rem 1.2rem; /* Más padding para los ítems */
+    gap: 0.8rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.4rem); /* Tamaño de fuente de cada ítem de contacto */
+    border-radius: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.box-item svg, .box-item i { /* Estilos para iconos SVG y de Bootstrap Icons */
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: #164a88; /* Color para los iconos */
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.COPY {
+    color: #27150b;
+    background-color: #c79c48;
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+}
+
+.COPY h2 {
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem); /* Fuente del copyright adaptable */
+    margin: 0;
+}
+
+/* --- Media Queries para responsividad --- */
+
+/* Ajustes para pantallas de escritorio (min-width: 769px) */
+@media screen and (min-width: 769px) {
+    .background-image-section {
+        flex-direction: row; /* Logo y texto en fila */
+        justify-content: center; /* Centrar el bloque logo-texto */
+        padding: 1rem 5%; /* Más padding a los lados */
+    }
+    .logo {
+        width: 20rem; /* Tamaño fijo del logo en escritorio */
+        height: 20rem;
+        margin-right: 0.5rem; /* Más espacio entre logo y texto */
+    }
+    .header-text-container {
+        text-align: left; /* Alinea el texto a la izquierda */
+        max-width: 1100px;
+        align-self: center; /* Alinea el contenedor de texto al centro vertical del flex item */
+    }
+    .titulo h1 {
+        font-size: 3.5rem; /* Tamaño más grande para el título principal */
+    }
+    .titulo h4 {
+        font-size: 2.2rem; /* Tamaño más grande para el subtítulo */
+    }
+    .subtitulo p {
+        font-size: 1.6rem;
+    }
+    .slogan {
+        margin-top: 2rem; /* Ajuste el margen superior del slogan */
+    }
+    .slogan h1 {
+        font-size: 4.5rem;
+    }
+    .slogan h5 {
+        font-size: 2rem;
+    }
+    .bottons .btn-12 {
+        flex-basis: calc(30% - 1.5rem); /* 3 botones por fila en escritorio */
+    }
+    .box-contacto {
+        max-width: 70rem; /* Más ancho para el contacto en pantallas grandes */
+    }
+}
+
+/* Ajustes para pantallas de tablet (min-width: 481px and max-width: 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .background-image-section {
+        flex-direction: column; /* Apila logo y texto en tablets */
+        justify-content: center;
+        padding: 3rem 1rem;
+    }
+    .logo {
+        width: clamp(8rem, 20vw, 10rem); /* Logo adaptable en tablets */
+        height: clamp(8rem, 20vw, 10rem);
+        margin-right: 0; /* Sin margen a la derecha si está apilado */
+        margin-bottom: 1.5rem; /* Espacio debajo del logo */
+    }
+    .header-text-container {
+        text-align: center; /* Centra el texto en tablets */
+        width: 90%;
+        max-width: 600px;
+        padding: 0;
+    }
+    .titulo h1 {
+        font-size: clamp(2.2rem, 6vw, 3.5rem);
+    }
+    .titulo h4 {
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+    }
+    .subtitulo p {
+        font-size: clamp(1rem, 2.8vw, 1.6rem);
+    }
+    .slogan {
+        margin-top: 1.5rem;
+    }
+    .slogan h1 {
+        font-size: clamp(3rem, 7vw, 4.5rem);
+    }
+    .slogan h5 {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+    }
+    .bottons .btn-12 {
+        flex-basis: calc(48% - 1.5rem); /* 2 botones por fila en tablets */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas (celulares, max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .background-image-section {
+        flex-direction:column; /* Siempre apilado en móviles */
+        justify-content: center;
+        padding: 3rem 5%;
+    }
+    .logo {
+        width: clamp(8rem, 27vw, 10rem); /* Logo más pequeño en móviles */
+        height: clamp(8rem, 27vw, 10rem);
+        margin-right: 0,5rem;
+        margin-left: 0,5rem;
+        margin-bottom: 1rem; /* Espacio debajo del logo */
+    }
+    .header-text-container {
+        width: 95%; /* Ocupa casi todo el ancho */
+        padding: 0;
+    }
+    .titulo h1 {
+        font-size: clamp(1.6rem, 7vw, 2.5rem);
+    }
+    .titulo h4 {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+    .subtitulo p {
+        font-size: clamp(0.8rem, 3vw, 1.2rem);
+    }
+    .slogan {
+        margin-top: 1rem;
+    }
+    .slogan h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    .slogan h5 {
+        font-size: clamp(0.9rem, 3.5vw, 1.4rem);
+    }
+    .bottons {
+        flex-direction: column; /* Apila los botones verticalmente */
+        align-items: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        padding: 0 0.5rem;
+    }
+    .bottons .btn-12 {
+        width: 90%; /* Ocupa la mayor parte del ancho */
+        padding: 1rem 0.5rem;
+        border-radius: 1.5rem;
+    }
+    .btn-12 h2 {
+        font-size: clamp(1rem, 4vw, 1.4rem);
+    }
+    .box-contacto {
+        margin-top: 2rem;
+    }
+    .box-contacto-titulo h2 {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+    }
+    .box-item {
+        padding: 0.6rem 0.8rem;
+        font-size: clamp(0.8rem, 3.5vw, 1.2rem);
+    }
+    .box-item svg, .box-item i {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+}

@@ -1,0 +1,405 @@
+/* Imports de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+/* --- Estilos Globales y Mobile-First --- */
+.cuerpo {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    padding: 0;
+    background-color: #f3e3a4;
+    overflow-x: hidden; /* Evita el scroll horizontal en dispositivos móviles */
+}
+
+/* Clases de colores para mantener la personalización, movidas desde el HTML */
+.titulo-ees-n7 {
+    color: rgb(129, 91, 42);
+}
+
+.fortin-tapalquen {
+    color: rgb(165, 101, 42);
+}
+
+.subtitulo {
+    color: #164a88;
+}
+
+.encontra-tu-libro {
+    color: black;
+}
+
+/* --- Header (Ahora no fijo) --- */
+.header-fixed {
+    width: 100%;
+    background-color: #f3e3a4;
+    padding: 10px 15px; /* Ajuste de padding para móviles */
+    display: flex; /* Habilitar Flexbox */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Distribuye espacio entre .header-left-content y .mover-menu */
+    flex-wrap: wrap; /* Permite que el contenido se ajuste */
+    position: relative; /* Padre para la imagen flotante en desktop */
+}
+
+/* Nuevo contenedor para el escudo y el título */
+.header-left-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Permite que ocupe espacio, empujando el menú */
+    justify-content: center; /* Centra el contenido en mobile dentro de este contenedor */
+}
+
+
+/* Contenedor principal que se ajusta debajo del header */
+main.container {
+    flex-grow: 1; /* Permite que ocupe el espacio disponible y empuje el footer */
+    /* Reducimos el padding-top significativamente, ya que el header es más compacto */
+    padding-top: 15px; /* Menos padding para el contenido si el header es más compacto */
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* --- Escudo y Títulos --- */
+.escudo-escuela {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra en móvil */
+    padding: 0;
+    position: relative;
+    /* Removed flex-grow: 1 here, it's now on .header-left-content */
+}
+
+.imagen-flotante-Biblioteca {
+    width: 70px; /* Tamaño inicial para móviles */
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px; /* Espacio entre imagen y texto, reducido un poco */
+    position: static; /* Por defecto, no flotante en mobile */
+    min-width: unset;
+    max-width: unset;
+}
+
+.titulo-pagina {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Alinea el texto a la izquierda dentro de este contenedor */
+    margin-top: 0;
+}
+
+.titulo-Biblioteca {
+    position: static;
+    font-size: 0.9rem;
+    margin-left: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.titulo-Biblioteca h2 {
+    font-size: 1.4em;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+.fortin-tapalquen {
+    position: static;
+    font-size: 0.9em;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
+/* --- Menú Dropdown (Ahora al lado del título) --- */
+.mover-menu {
+    /* Eliminamos las propiedades de posicionamiento fijo */
+    /* Se posiciona automáticamente por Flexbox en el header */
+    padding-right: 10px; /* Pequeño padding a la derecha */
+    margin-top: 0; /* Asegurar que no haya margen superior extra */
+    margin-bottom: 0; /* Asegurar que no haya margen inferior extra */
+}
+
+.btn.dropdown-toggle {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    color: #164a88;
+    font-size: 2rem; /* Tamaño de ícono adecuado para móvil */
+    padding: 0.375rem 0.75rem;
+}
+
+/* --- Títulos de Contenido --- */
+.Titulo-contenido,
+.Titulo-contenido2 {
+    font-size: 1em;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.subtitulo {
+    font-size: 2.2em;
+    font-family: "Protest Riot", sans-serif;
+    margin-bottom: 5px;
+}
+
+.encontra-tu-libro {
+    font-size: 1.1em;
+    margin-top: 0;
+}
+
+.Titulo-contenido2 h5 {
+    font-size: 1em;
+}
+
+/* --- Barra de Búsqueda --- */
+.barra-busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem auto;
+    width: 90%;
+    max-width: 500px;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    padding: 8px 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.barra-busqueda input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    font-size: 1em;
+    border-radius: 0;
+}
+
+.barra-busqueda .bx-search {
+    font-size: 1.4em;
+    margin-right: 10px;
+    color: #6c757d;
+}
+
+/* --- Libros (Contenedor Grid Responsivo) --- */
+.libros #fileList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 5px;
+    padding: 20px 0;
+    justify-content: center;
+    background-color: #f3e3a4;
+}
+
+.preview {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.COPY {
+    color: #27150b;
+    background-color: #c79c48;
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+}
+
+.COPY h2 {
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem); /* Fuente del copyright adaptable */
+    margin: 0;
+}
+/* --- Media Queries para pantallas más grandes (Tablet y Desktop) --- */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    main.container {
+        padding-top: 20px; /* Ajuste para pantallas más anchas */
+    }
+
+    .imagen-flotante-Biblioteca {
+        width: 80px;
+        height: 80px;
+    }
+
+    .titulo-Biblioteca {
+        font-size: 1rem;
+    }
+
+    .titulo-Biblioteca h2 {
+        font-size: 1.6em;
+    }
+
+    .fortin-tapalquen {
+        font-size: 1em;
+    }
+
+    .subtitulo {
+        font-size: 2.5em;
+    }
+
+    .encontra-tu-libro {
+        font-size: 1.2em;
+    }
+
+    .libros #fileList {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    main.container {
+        padding-top: 30px; /* Ajuste para desktop */
+    }
+
+    .header-fixed {
+        justify-content: space-between; /* Alinea los elementos a los extremos */
+        padding-left: 20px;
+    }
+
+    .header-left-content {
+        justify-content: flex-start; /* Alinea a la izquierda en desktop */
+        flex-grow: 0; /* No crece para no empujar el menú tan lejos */
+        margin-left: 140px; /* Margen para el escudo flotante */
+    }
+
+    .escudo-escuela {
+        justify-content: flex-start;
+        width: auto;
+        position: relative; /* Necesario para la imagen absoluta */
+    }
+
+    .imagen-flotante-Biblioteca {
+        width: 110px;
+        height: 110px;
+        position: absolute; /* Posiciona absolutamente dentro de .escudo-escuela */
+        top: 10px; /* Ajusta según sea necesario */
+        left: -120px; /* Mueve a la izquierda del contenedor .header-left-content */
+        margin-right: 0; /* Elimina margen derecho cuando es absoluto */
+    }
+
+    .titulo-pagina {
+        text-align: left;
+        margin-left: 0; /* No se necesita margen aquí si el escudo está "flotando" fuera */
+        margin-top: 20px;
+    }
+
+    .titulo-Biblioteca {
+        font-size: 1.1rem;
+    }
+
+    .titulo-Biblioteca h2 {
+        font-size: 2em;
+    }
+
+    .fortin-tapalquen {
+        font-size: 1.2em;
+    }
+
+    .mover-menu {
+        padding-right: 20px; /* Ajusta padding para el lado derecho */
+        margin-left: 0; /* Eliminar margin-left: auto para que no se separe demasiado */
+        margin-right: 0; /* Asegurar que no haya margen derecho */
+    }
+
+    .btn.dropdown-toggle {
+        font-size: 2.5rem;
+    }
+
+    .Titulo-contenido {
+        font-size: 1.1em;
+        margin-top: 30px;
+    }
+
+    .subtitulo {
+        font-size: 3em;
+    }
+
+    .encontra-tu-libro {
+        font-size: 1.4em;
+    }
+
+    .barra-busqueda {
+        width: 70%;
+        max-width: 600px;
+    }
+
+    .libros #fileList {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    main.container {
+        padding-top: 40px;
+    }
+
+    .header-left-content {
+        margin-left: 170px; /* Más margen para el escudo más grande */
+    }
+
+    .imagen-flotante-Biblioteca {
+        width: 130px;
+        height: 130px;
+        top: 15px;
+        left: -140px; /* Ajuste para el escudo más grande */
+    }
+
+    .titulo-Biblioteca h2 {
+        font-size: 2.3em;
+    }
+
+    .fortin-tapalquen {
+        font-size: 1.4em;
+    }
+
+    .btn.dropdown-toggle {
+        font-size: 2.8rem;
+    }
+
+    .subtitulo {
+        font-size: 3.5em;
+    }
+
+    .libros #fileList {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    main.container {
+        padding-top: 50px;
+    }
+
+    .header-left-content {
+        margin-left: 200px;
+    }
+
+    .imagen-flotante-Biblioteca {
+        width: 150px;
+        height: 150px;
+        top: 20px;
+        left: -160px;
+    }
+    .titulo-Biblioteca h2 {
+        font-size: 2.6em;
+    }
+    .fortin-tapalquen {
+        font-size: 1.5em;
+    }
+}
