@@ -61,55 +61,35 @@ Anuario.addEventListener('click',() => {
  
 })
 
-async function uploadFile() {
-      const input = document.getElementById('fileInput');
-      const file = input.files[0];
-      if (!file) return alert('Seleccioná un archivo');
+async function uploadFile(inputId = 'fileInput') {
+  const input = document.getElementById(inputId);
+  const file = input && input.files ? input.files[0] : null;
+  if (!file) {
+    alert('Seleccioná un archivo');
+    return;
+  }
 
-      const formData = new FormData();
-      formData.append('file', file);
-      
-              if (file.name.match(/\.(jpg|jpeg|png|gif|pdf)$/i)) {
-                const input = document.getElementById('fileInput');
-                const file = input.files[0];
-                if (!file) return alert('Seleccioná un archivo');
+  if (!file.name.match(/\.(jpg|jpeg|png|gif|pdf)$/i)) {
+    alert('Archivo incompatible');
+    return;
+  }
 
-                const formData = new FormData();
-                formData.append('file', file);
+  const formData = new FormData();
+  formData.append('file', file);
 
-                const res = await fetch(`${API_URL}/upload`, {
-                  method: 'POST',
-                  body: formData,
-                });
+  const res = await fetch(`${API_URL}/upload`, {
+    method: 'POST',
+    body: formData,
+  });
 
-                if (res.ok) {
-                  alert('Archivo subido con éxito');
-                  input.value = '';
-                  fetchFiles(); // actualizar lista
-                } else {
-                  alert('Error al subir archivo');
-                  console.log(res)
-                }
-            } else {
-                alert('Archivo incompatible');
-            }
-      // const input = document.getElementById('fileInput');
-      // const file = input.files[0];
-      // if (!file) return alert('Seleccioná un archivo');
-
-      // const formData = new FormData();
-      // formData.append('file', file);
-
-      const res = await fetch('/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (res.ok) { 
-        alert('Archivo subido con éxito');
-        input.value = '';
-        fetchFiles(); // actualizar lista
-      } else {
-        alert('Error al subir archivo');
-      }
+  if (res.ok) {
+    alert('Archivo subido con éxito');
+    input.value = '';
+    if (typeof fetchFiles === 'function') {
+      fetchFiles();
     }
+  } else {
+    alert('Error al subir archivo');
+    try { console.log(await res.text()); } catch (_) {}
+  }
+}

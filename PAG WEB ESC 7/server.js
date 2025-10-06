@@ -61,6 +61,12 @@ app.get('/', (req, res) => {
 // Ruta para subir un archivo
 app.post('/upload', upload.single('file'), async (req, res) => {
   try {
+    console.log('📥 Upload request received', {
+      originalname: req.file && req.file.originalname,
+      mimetype: req.file && req.file.mimetype,
+      size: req.file && req.file.size,
+      time: new Date().toISOString()
+    });
     if (!req.file) {
       return res.status(400).json({ error: 'No se ha subido ningún archivo.' });
     }
